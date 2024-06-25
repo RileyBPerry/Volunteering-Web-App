@@ -7,80 +7,105 @@
     <link href="MultiSelect.css" rel="stylesheet" type="text/css">
     <style>
     body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 125vh;
-        }
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 175vh;
+    }
 
-        form {
-            background: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            box-sizing: border-box;
-        }
+    form {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-        label {
-            font-weight: bold;
-            margin-bottom: 5px;
-            display: block;
-            font-size: 14px;
-        }
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        display: block;
+        font-size: 14px;
+    }
 
-        input[type="text"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 6px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 14px;
-        }
+    input[type="text"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 6px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
 
-        input[type="checkbox"] {
-            margin-right: 5px;
-        }
+    input[type="checkbox"] {
+        margin-right: 5px;
+    }
 
-        .skills,
-        .availability {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
+    .skills,
+    .availability {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
 
-        .skills label,
-        .availability label {
-            flex: 1 1 45%;
-            font-size: 14px;
-        }
+    .skills label,
+    .availability label {
+        flex: 1 1 45%;
+        font-size: 14px;
+    }
 
-        textarea {
-            height: 80px;
-        }
+    textarea {
+        height: 80px;
+    }
 
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+    input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
 
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+
+    .availability-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 10px;
+    }
+
+    .availability-table th, .availability-table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+    }
+
+    .availability-table th {
+        background-color: #f2f2f2;
+    }
+
+    .availability-table select {
+        width: 100%;
+        padding: 6px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
     </style>
 </head>
 <body>
@@ -169,41 +194,199 @@
         <textarea id="preferences" name="preferences" rows="4" cols="50"></textarea>
 
         <label for="availability">Availability</label>
-        <input type="date" id="availability" name="availability" required>
+        <table class="availability-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Available Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>
+                        <select id="availability-monday" name="availability[Monday][]" multiple>
+                            <option value="6:00AM-7:00AM">6:00AM-7:00AM</option>
+                            <option value="7:00AM-8:00AM">7:00AM-8:00AM</option>
+                            <option value="8:00AM-9:00AM">8:00AM-9:00AM</option>
+                            <option value="9:00AM-10:00AM">9:00AM-10:00AM</option>
+                            <option value="10:00AM-11:00AM">10:00AM-11:00AM</option>
+                            <option value="11:00AM-12:00PM">11:00AM-12:00PM</option>
+                            <option value="12:00PM-1:00PM">12:00PM-1:00PM</option>
+                            <option value="1:00PM-2:00PM">1:00PM-2:00PM</option>
+                            <option value="2:00PM-3:00PM">2:00PM-3:00PM</option>
+                            <option value="3:00PM-4:00PM">3:00PM-4:00PM</option>
+                            <option value="4:00PM-5:00PM">4:00PM-5:00PM</option>
+                            <option value="5:00PM-6:00PM">5:00PM-6:00PM</option>
+                            <option value="6:00PM-7:00PM">6:00PM-7:00PM</option>
+                            <option value="7:00PM-8:00PM">7:00PM-8:00PM</option>
+                            <option value="8:00PM-9:00PM">8:00PM-9:00PM</option>
+                            <option value="9:00PM-10:00PM">9:00PM-10:00PM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>
+                        <select id="availability-tuesday" name="availability[Tuesday][]" multiple>
+                            <option value="6:00AM-7:00AM">6:00AM-7:00AM</option>
+                            <option value="7:00AM-8:00AM">7:00AM-8:00AM</option>
+                            <option value="8:00AM-9:00AM">8:00AM-9:00AM</option>
+                            <option value="9:00AM-10:00AM">9:00AM-10:00AM</option>
+                            <option value="10:00AM-11:00AM">10:00AM-11:00AM</option>
+                            <option value="11:00AM-12:00PM">11:00AM-12:00PM</option>
+                            <option value="12:00PM-1:00PM">12:00PM-1:00PM</option>
+                            <option value="1:00PM-2:00PM">1:00PM-2:00PM</option>
+                            <option value="2:00PM-3:00PM">2:00PM-3:00PM</option>
+                            <option value="3:00PM-4:00PM">3:00PM-4:00PM</option>
+                            <option value="4:00PM-5:00PM">4:00PM-5:00PM</option>
+                            <option value="5:00PM-6:00PM">5:00PM-6:00PM</option>
+                            <option value="6:00PM-7:00PM">6:00PM-7:00PM</option>
+                            <option value="7:00PM-8:00PM">7:00PM-8:00PM</option>
+                            <option value="8:00PM-9:00PM">8:00PM-9:00PM</option>
+                            <option value="9:00PM-10:00PM">9:00PM-10:00PM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>
+                        <select id="availability-wednesday" name="availability[Wednesday][]" multiple>
+                            <option value="6:00AM-7:00AM">6:00AM-7:00AM</option>
+                            <option value="7:00AM-8:00AM">7:00AM-8:00AM</option>
+                            <option value="8:00AM-9:00AM">8:00AM-9:00AM</option>
+                            <option value="9:00AM-10:00AM">9:00AM-10:00AM</option>
+                            <option value="10:00AM-11:00AM">10:00AM-11:00AM</option>
+                            <option value="11:00AM-12:00PM">11:00AM-12:00PM</option>
+                            <option value="12:00PM-1:00PM">12:00PM-1:00PM</option>
+                            <option value="1:00PM-2:00PM">1:00PM-2:00PM</option>
+                            <option value="2:00PM-3:00PM">2:00PM-3:00PM</option>
+                            <option value="3:00PM-4:00PM">3:00PM-4:00PM</option>
+                            <option value="4:00PM-5:00PM">4:00PM-5:00PM</option>
+                            <option value="5:00PM-6:00PM">5:00PM-6:00PM</option>
+                            <option value="6:00PM-7:00PM">6:00PM-7:00PM</option>
+                            <option value="7:00PM-8:00PM">7:00PM-8:00PM</option>
+                            <option value="8:00PM-9:00PM">8:00PM-9:00PM</option>
+                            <option value="9:00PM-10:00PM">9:00PM-10:00PM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>
+                        <select id="availability-thursday" name="availability[Thursday][]" multiple>
+                            <option value="6:00AM-7:00AM">6:00AM-7:00AM</option>
+                            <option value="7:00AM-8:00AM">7:00AM-8:00AM</option>
+                            <option value="8:00AM-9:00AM">8:00AM-9:00AM</option>
+                            <option value="9:00AM-10:00AM">9:00AM-10:00AM</option>
+                            <option value="10:00AM-11:00AM">10:00AM-11:00AM</option>
+                            <option value="11:00AM-12:00PM">11:00AM-12:00PM</option>
+                            <option value="12:00PM-1:00PM">12:00PM-1:00PM</option>
+                            <option value="1:00PM-2:00PM">1:00PM-2:00PM</option>
+                            <option value="2:00PM-3:00PM">2:00PM-3:00PM</option>
+                            <option value="3:00PM-4:00PM">3:00PM-4:00PM</option>
+                            <option value="4:00PM-5:00PM">4:00PM-5:00PM</option>
+                            <option value="5:00PM-6:00PM">5:00PM-6:00PM</option>
+                            <option value="6:00PM-7:00PM">6:00PM-7:00PM</option>
+                            <option value="7:00PM-8:00PM">7:00PM-8:00PM</option>
+                            <option value="8:00PM-9:00PM">8:00PM-9:00PM</option>
+                            <option value="9:00PM-10:00PM">9:00PM-10:00PM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>
+                        <select id="availability-friday" name="availability[Friday][]" multiple>
+                            <option value="6:00AM-7:00AM">6:00AM-7:00AM</option>
+                            <option value="7:00AM-8:00AM">7:00AM-8:00AM</option>
+                            <option value="8:00AM-9:00AM">8:00AM-9:00AM</option>
+                            <option value="9:00AM-10:00AM">9:00AM-10:00AM</option>
+                            <option value="10:00AM-11:00AM">10:00AM-11:00AM</option>
+                            <option value="11:00AM-12:00PM">11:00AM-12:00PM</option>
+                            <option value="12:00PM-1:00PM">12:00PM-1:00PM</option>
+                            <option value="1:00PM-2:00PM">1:00PM-2:00PM</option>
+                            <option value="2:00PM-3:00PM">2:00PM-3:00PM</option>
+                            <option value="3:00PM-4:00PM">3:00PM-4:00PM</option>
+                            <option value="4:00PM-5:00PM">4:00PM-5:00PM</option>
+                            <option value="5:00PM-6:00PM">5:00PM-6:00PM</option>
+                            <option value="6:00PM-7:00PM">6:00PM-7:00PM</option>
+                            <option value="7:00PM-8:00PM">7:00PM-8:00PM</option>
+                            <option value="8:00PM-9:00PM">8:00PM-9:00PM</option>
+                            <option value="9:00PM-10:00PM">9:00PM-10:00PM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>
+                        <select id="availability-saturday" name="availability[Saturday][]" multiple>
+                            <option value="6:00AM-7:00AM">6:00AM-7:00AM</option>
+                            <option value="7:00AM-8:00AM">7:00AM-8:00AM</option>
+                            <option value="8:00AM-9:00AM">8:00AM-9:00AM</option>
+                            <option value="9:00AM-10:00AM">9:00AM-10:00AM</option>
+                            <option value="10:00AM-11:00AM">10:00AM-11:00AM</option>
+                            <option value="11:00AM-12:00PM">11:00AM-12:00PM</option>
+                            <option value="12:00PM-1:00PM">12:00PM-1:00PM</option>
+                            <option value="1:00PM-2:00PM">1:00PM-2:00PM</option>
+                            <option value="2:00PM-3:00PM">2:00PM-3:00PM</option>
+                            <option value="3:00PM-4:00PM">3:00PM-4:00PM</option>
+                            <option value="4:00PM-5:00PM">4:00PM-5:00PM</option>
+                            <option value="5:00PM-6:00PM">5:00PM-6:00PM</option>
+                            <option value="6:00PM-7:00PM">6:00PM-7:00PM</option>
+                            <option value="7:00PM-8:00PM">7:00PM-8:00PM</option>
+                            <option value="8:00PM-9:00PM">8:00PM-9:00PM</option>
+                            <option value="9:00PM-10:00PM">9:00PM-10:00PM</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>
+                        <select id="availability-sunday" name="availability[Sunday][]" multiple>
+                            <option value="6:00AM-7:00AM">6:00AM-7:00AM</option>
+                            <option value="7:00AM-8:00AM">7:00AM-8:00AM</option>
+                            <option value="8:00AM-9:00AM">8:00AM-9:00AM</option>
+                            <option value="9:00AM-10:00AM">9:00AM-10:00AM</option>
+                            <option value="10:00AM-11:00AM">10:00AM-11:00AM</option>
+                            <option value="11:00AM-12:00PM">11:00AM-12:00PM</option>
+                            <option value="12:00PM-1:00PM">12:00PM-1:00PM</option>
+                            <option value="1:00PM-2:00PM">1:00PM-2:00PM</option>
+                            <option value="2:00PM-3:00PM">2:00PM-3:00PM</option>
+                            <option value="3:00PM-4:00PM">3:00PM-4:00PM</option>
+                            <option value="4:00PM-5:00PM">4:00PM-5:00PM</option>
+                            <option value="5:00PM-6:00PM">5:00PM-6:00PM</option>
+                            <option value="6:00PM-7:00PM">6:00PM-7:00PM</option>
+                            <option value="7:00PM-8:00PM">7:00PM-8:00PM</option>
+                            <option value="8:00PM-9:00PM">8:00PM-9:00PM</option>
+                            <option value="9:00PM-10:00PM">9:00PM-10:00PM</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
 
-        <button type="submit">Save Profile</button>
+        <input type="submit" value="Submit">
+
     </form>
 
-    <!-- Include the Multi Select JS class -->
     <script src="MultiSelect.js"></script>
     <script>
-    // JavaScript for initializing Multi Select and handling form submission
-    document.getElementById('profileForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Process form submission here (e.g., send data to server)
-        console.log('Form submitted');
-    });
+        document.getElementById('profileForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission for demonstration
 
-    // Initialize the Multi Select dropdown for skills
-    new MultiSelect('#skills', {
-        // Options for the multi-select dropdown
-        data: [
-            { value: 'Skill1', text: 'Skill 1' },
-            { value: 'Skill2', text: 'Skill 2' }
-            // Add more skills as needed
-        ],
-        placeholder: 'Select skills',
-        onChange: function(value, text, element) {
-            console.log('Change:', value, text, element);
-        },
-        onSelect: function(value, text, element) {
-            console.log('Selected:', value, text, element);
-        },
-        onUnselect: function(value, text, element) {
-            console.log('Unselected:', value, text, element);
-        }
-    });
+            // Form data extraction logic can be added here
+        });
+
+        // Initialize MultiSelect
+        const skillsSelect = new MultiSelect('#skills');
+        const availabilityMondaySelect = new MultiSelect('#availability-monday');
+        const availabilityTuesdaySelect = new MultiSelect('#availability-tuesday');
+        const availabilityWednesdaySelect = new MultiSelect('#availability-wednesday');
+        const availabilityThursdaySelect = new MultiSelect('#availability-thursday');
+        const availabilityFridaySelect = new MultiSelect('#availability-friday');
+        const availabilitySaturdaySelect = new MultiSelect('#availability-saturday');
+        const availabilitySundaySelect = new MultiSelect('#availability-sunday');
     </script>
-
 </body>
 </html>
