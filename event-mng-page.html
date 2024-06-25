@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!---->
+
+        <title>
+            Event Management Form
+        </title>
+
+        <style>
+            p, button, div, label{
+                font-family: Jost;
+                color: white;
+                text-align: center;
+            }
+            .page-title{
+                font-size: 30px;
+                font-weight: 600;
+                font-family: Playfair;
+            }
+            div{
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            label{
+                display: block;
+            }
+            .urgency{
+                display: inline-block;
+            }
+            .field-title{
+                font-size: 18px;
+                font-weight: 500;
+            }
+            .field{
+                font-size: 16px;
+                font-weight: 400;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                border-bottom-width: 3px;
+                border-color: black;
+                border-style: none;
+                border-radius: 4px;
+            }
+            
+            .submit-button{
+                font-family: jost;
+                font-size: 16px;
+                border-radius: 40px;
+                border: none;
+                width: 200px;
+                background-color: rgb(250,230,8);
+            }
+        </style>
+    </head>
+    <body style="background-color: rgb(81,133,83);">
+        <p class="page-title">Event Management Form</p>
+        
+        <form action="/submit_profile" method="POST">
+            <!--Event Name-->
+            <div>
+                <label for="event-name" class="field-title">Event Name:</label>
+                <input type="text" id="event-name" name="event-name" maxlength="100" required class="field">
+            </div>
+
+            <!--Event Description-->
+            <div>
+                <label for="event-desc" class="field-title">Event Description:</label>
+                <textarea id="event-desc" name="event-desc" required class="field"></textarea>
+            </div>
+
+            <!--Event Description-->
+            <div>
+                <label for="event-location" class="field-title">Event Location:</label>
+                <textarea id="event-location" name="event-location" required class="field"></textarea>
+            </div>
+
+            <!--Event Location (my preferred design)
+            <div>
+                <p>Event Location:</p>
+                <div>
+                    <label><input type="radio" id="online" name="location" value="online" checked />Online</label>
+                    
+                    <label><input type="radio" id="inperson" name="location" value="inperson" />In-Person</label>
+                </div>
+                <p><small>if in-person:</small></p>
+                <select name="state" id="state" style="font-family: poppins;">
+                    <option value="state">State</option>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AZ">AZ</option>
+                </select> 
+                <input type="text" placeholder="City" style="font-family: poppins;">
+                <input type="text" placeholder="ZipCode" style="font-family: poppins;">
+                <input type="text" placeholder="Address" style="font-family: poppins;">
+            </div>-->
+
+            <!--Required Skills-->
+            <div>
+                <label for="skills" class="field-title">Required Skills</label>
+                <label><input type="checkbox" id="communication" name="skills" required class="field"/>Communication</label>
+                <label><input type="checkbox" id="music" name="skills" class="field" />Music</label>
+                <label><input type="checkbox" id="food-service" name="skills" class="field" />Food Service</label>
+            </div>
+
+            <!--Urgency-->
+            <div>
+                <label for="urgency" class="field-title">Urgency: </label>
+                <select id="urgency" name="urgency" required style="font-family: Jost;" class="field">
+                    <option value="">Select Urgency Level</option>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+            </div>  
+
+            <!--Date & Time-->
+            <div>
+                <label for="event-date&time" class="field-title">Date & Time:</label>
+                <input type="date" id="event-date" name="event-date&time" style="font-family: Jost;" required class="field"/>
+                <input type="time" id="event-time" name="event-date&time" min="00:00" max="24:00" style="font-family: Jost;" required class="field"/>
+            </div>
+
+            <br>
+            <center><input type="submit" value="Submit & Review" class="submit-button" class="submit-button"></center>
+
+        </form>
+    </body>
+</html>
