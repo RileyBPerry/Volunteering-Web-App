@@ -1,0 +1,11 @@
+.header-section{
+    display: flex;
+}
+
+.header-left-section{
+    background-color: lightpink;
+}
+
+.header-right-section{
+    background-color: lightblue;
+}
