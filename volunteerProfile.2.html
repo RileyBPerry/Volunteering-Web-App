@@ -4,10 +4,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>User Profile Management</title>
-    <link href="MultiSelect.css" rel="stylesheet" type="text/css">
+    <link href="styles/MultiSelect.css" rel="stylesheet" type="text/css">
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!---->
+
     <style>
     body {
-        font-family: Arial, sans-serif;
+        font-family: Jost, sans-serif;
         background-color: #f4f4f9;
         margin: 0;
         padding: 0;
@@ -113,9 +120,11 @@
 
         <h1>User Profile Management</h1>
 
+        <!--Full Name-->
         <label for="fullname">Full Name</label>
         <input type="text" id="fullname" name="fullname" maxlength="50" required>
 
+        <!--Addresses-->
         <label for="address1">Address 1</label>
         <input type="text" id="address1" name="address1" maxlength="100" required>
 
@@ -185,9 +194,32 @@
 
         <label for="skills">Skills</label>
         <select id="skills" name="skills" multiple data-placeholder="Select skills" required>
-            <option value="Skill1">Skill 1</option>
-            <option value="Skill2">Skill 2</option>
-            <!-- Add more skills as needed -->
+            <option value="acedemics">Acedemics</option>
+            <option value="arts">Arts</option>
+            <option value="computer-and-IT">Computer & IT</option>
+            <option value="engineering">Engineering</option>
+            <option value="hobbies-and-crafts">Hobbies & Crafts</option>
+            <option value="interactive-and-web-dev">Interactive & Web Development</option>
+            <option value="legal-and-advocacy">Legal & Advocacy</option>
+            <option value="music">Music</option>
+            <option value="administrative-and-clerical">Administrative & Clerical</option>
+            <option value="business-and-management">Business & Management</option>
+            <option value="disaster-relief">Disaster Relief</option>
+            <option value="finance">Finance</option>
+            <option value="HR">HR</option>
+            <option value="housing-and-facilities">Housing & Facilities</option>
+            <option value="interpersonal">Interpersonal</option>
+            <option value="preforming-arts">Preforming Arts</option>
+            <option value="trades">Trades</option>
+            <option value="transportation">Transportation</option>
+            <option value="animals-and-environment">Animals & Environment</option>
+            <option value="children-and-family">Children & Family</option>
+            <option value="education-and-literacy">Education & Literacy</option>
+            <option value="food-service-and-events">Food Service & Events</option>
+            <option value="healthcare-and-social-services">Healthcare & Social Services</option>
+            <option value="language-and-culture">Language & Culture</option>
+            <option value="marketing-and-communications">Marketing & Communications</option>
+            <option value="sports-and-recreation">Sports & Recreation</option>
         </select>
 
         <label for="preferences">Preferences</label>

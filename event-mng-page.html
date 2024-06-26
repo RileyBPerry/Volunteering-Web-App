@@ -1,141 +1,195 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--fonts-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
+        <!--font-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <!---->
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>User Profile Management</title>
+        <link href="styles/MultiSelect.css" rel="stylesheet" type="text/css">
 
         <title>
             Event Management Form
         </title>
 
         <style>
-            p, button, div, label{
-                font-family: Jost;
-                color: white;
-                text-align: center;
+            body {
+                font-family: Jost, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                margin-top: 40px;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
             }
-            .page-title{
-                font-size: 30px;
-                font-weight: 600;
-                font-family: Playfair;
+
+            form {
+                background: #fff;
+                padding: 15px;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                max-width: 700px;
+                width: 100%;
+                box-sizing: border-box;
             }
-            div{
-                margin-top: 15px;
-                margin-bottom: 15px;
-            }
-            label{
+
+            label {
+                font-weight: bold;
+                margin-bottom: 5px;
                 display: block;
+                font-size: 16px;
             }
+
+            input[type="text"],
+            select,
+            textarea {
+                width: 100%;
+                padding: 6px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+
+            input[type="checkbox"] {
+                margin-right: 5px;
+            }
+
+            .skills,
+            .availability {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            .skills label,
+            .availability label {
+                flex: 1 1 45%;
+                font-size: 14px;
+            }
+
+            textarea {
+                height: 80px;
+            }
+
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 8px 12px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 14px;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+            .availability-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 10px;
+            }
+
+            .availability-table th, .availability-table td {
+                border: 1px solid #ccc;
+                padding: 8px;
+                text-align: left;
+            }
+
+            .availability-table th {
+                background-color: #f2f2f2;
+            }
+
+            .availability-table select {
+                width: 100%;
+                padding: 6px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                font-size: 14px;
+            }
+                    
             .urgency{
                 display: inline-block;
             }
-            .field-title{
-                font-size: 18px;
-                font-weight: 500;
-            }
-            .field{
-                font-size: 16px;
-                font-weight: 400;
-                margin-top: 5px;
-                margin-bottom: 5px;
-                border-bottom-width: 3px;
-                border-color: black;
-                border-style: none;
-                border-radius: 4px;
-            }
-            
-            .submit-button{
-                font-family: jost;
-                font-size: 16px;
-                border-radius: 40px;
-                border: none;
-                width: 200px;
-                background-color: rgb(250,230,8);
-            }
         </style>
     </head>
-    <body style="background-color: rgb(81,133,83);">
-        <p class="page-title">Event Management Form</p>
-        
-        <form action="/submit_profile" method="POST">
+    <body>
+        <form id="eventManagementForm">
+            <h1>Event Management Form</h1>
+
             <!--Event Name-->
-            <div>
-                <label for="event-name" class="field-title">Event Name:</label>
-                <input type="text" id="event-name" name="event-name" maxlength="100" required class="field">
-            </div>
+            <label for="event-name">Event Name:</label>
+            <input type="text" id="event-name" name="event-name" maxlength="100" required class="field">
 
             <!--Event Description-->
-            <div>
-                <label for="event-desc" class="field-title">Event Description:</label>
-                <textarea id="event-desc" name="event-desc" required class="field"></textarea>
-            </div>
+            <label for="event-desc">Event Description:</label>
+            <textarea id="event-desc" name="event-desc" required class="field"></textarea>
 
             <!--Event Description-->
-            <div>
-                <label for="event-location" class="field-title">Event Location:</label>
-                <textarea id="event-location" name="event-location" required class="field"></textarea>
-            </div>
-
-            <!--Event Location (my preferred design)
-            <div>
-                <p>Event Location:</p>
-                <div>
-                    <label><input type="radio" id="online" name="location" value="online" checked />Online</label>
-                    
-                    <label><input type="radio" id="inperson" name="location" value="inperson" />In-Person</label>
-                </div>
-                <p><small>if in-person:</small></p>
-                <select name="state" id="state" style="font-family: poppins;">
-                    <option value="state">State</option>
-                    <option value="AL">AL</option>
-                    <option value="AK">AK</option>
-                    <option value="AZ">AZ</option>
-                </select> 
-                <input type="text" placeholder="City" style="font-family: poppins;">
-                <input type="text" placeholder="ZipCode" style="font-family: poppins;">
-                <input type="text" placeholder="Address" style="font-family: poppins;">
-            </div>-->
+            <label for="event-location">Event Location:</label>
+            <textarea id="event-location" name="event-location" required class="field"></textarea>
 
             <!--Required Skills-->
-            <div>
-                <label for="skills" class="field-title">Required Skills</label>
-                <label><input type="checkbox" id="communication" name="skills" required class="field"/>Communication</label>
-                <label><input type="checkbox" id="music" name="skills" class="field" />Music</label>
-                <label><input type="checkbox" id="food-service" name="skills" class="field" />Food Service</label>
-            </div>
+            <label for="skills">Skills</label>
+            <select id="skills" name="skills" data-placeholder="Select skills" multiple required data-multi-select>
+                <option value="acedemics">Acedemics</option>
+                <option value="arts">Arts</option>
+                <option value="computer-and-IT">Computer & IT</option>
+                <option value="engineering">Engineering</option>
+                <option value="hobbies-and-crafts">Hobbies & Crafts</option>
+                <option value="interactive-and-web-dev">Interactive & Web Development</option>
+                <option value="legal-and-advocacy">Legal & Advocacy</option>
+                <option value="music">Music</option>
+                <option value="administrative-and-clerical">Administrative & Clerical</option>
+                <option value="business-and-management">Business & Management</option>
+                <option value="disaster-relief">Disaster Relief</option>
+                <option value="finance">Finance</option>
+                <option value="HR">HR</option>
+                <option value="housing-and-facilities">Housing & Facilities</option>
+                <option value="interpersonal">Interpersonal</option>
+                <option value="preforming-arts">Preforming Arts</option>
+                <option value="trades">Trades</option>
+                <option value="transportation">Transportation</option>
+                <option value="animals-and-environment">Animals & Environment</option>
+                <option value="children-and-family">Children & Family</option>
+                <option value="education-and-literacy">Education & Literacy</option>
+                <option value="food-service-and-events">Food Service & Events</option>
+                <option value="healthcare-and-social-services">Healthcare & Social Services</option>
+                <option value="language-and-culture">Language & Culture</option>
+                <option value="marketing-and-communications">Marketing & Communications</option>
+                <option value="sports-and-recreation">Sports & Recreation</option>
+            </select>
+
 
             <!--Urgency-->
-            <div>
-                <label for="urgency" class="field-title">Urgency: </label>
-                <select id="urgency" name="urgency" required style="font-family: Jost;" class="field">
-                    <option value="">Select Urgency Level</option>
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
-            </div>  
+            <label for="urgency">Urgency: </label>
+            <select id="urgency" name="urgency" required style="font-family: Jost;" class="field">
+                <option value="">Select Urgency Level</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
 
             <!--Date & Time-->
-            <div>
-                <label for="event-date&time" class="field-title">Date & Time:</label>
-                <input type="date" id="event-date" name="event-date&time" style="font-family: Jost;" required class="field"/>
-                <input type="time" id="event-time" name="event-date&time" min="00:00" max="24:00" style="font-family: Jost;" required class="field"/>
-            </div>
+            <label for="event-date&time">Date & Time:</label>
+            <input type="date" id="event-date" name="event-date&time" style="font-family: Jost;" required class="field"/>
+            <input type="time" id="event-time" name="event-date&time" min="00:00" max="24:00" style="font-family: Jost;" required class="field"/>
 
-            <br>
+            
             <center><input type="submit" value="Submit & Review" class="submit-button" class="submit-button"></center>
 
         </form>
+        <script src="MultiSelect.js"></script>
     </body>
 </html>
