@@ -7,8 +7,7 @@
   user-select: none;
 }
 .multi-select .multi-select-header {
-  border: 1px solid #dee2e6;
-  padding: 7px 30px 7px 12px;
+  padding: 5px;
   overflow: hidden;
   gap: 7px;
   min-height: 45px;
@@ -34,13 +33,13 @@
   display: flex;
 }
 .multi-select .multi-select-header .multi-select-header-placeholder {
-  color: #65727e;
+  color: #000000;
 }
 .multi-select .multi-select-header .multi-select-header-option {
   display: inline-flex;
   align-items: center;
-  background-color: #f3f4f7;
-  font-size: 14px;
+  background-color: #ffffff;
+  font-size: 16px;
   padding: 3px 8px;
   border-radius: 5px;
 }
