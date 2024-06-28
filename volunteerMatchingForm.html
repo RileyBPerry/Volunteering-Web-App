@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!---->
+
+        <link rel="stylesheet" href="styles/volunteerMatchingForm.css" type="text/css">
+    </head>
+    <body style=
+    "background-color: rgb(248, 248, 248); 
+    font-family: jost;
+    padding-bottom: 1000px;">
+        <center><div class="form-header">
+            <p>Matching Form</p>
+        </div></center>
+        <div class="form-content">
+            <div class="volunteer-section">
+                <div class="section-title">
+                    <p>Volunteer:</p>
+                </div>
+                <div class="section-header">
+                    <p>Example Volunteer Name</p>
+                </div>
+                <div class="section-content">
+                    <form>
+                        <label for="volunteer-skills">Skills:</label>
+                        <textarea id="volunteer-skills" name="volunteer-skills" class="field" disabled>List Skills Here From Database</textarea>
+
+                        <label for="volunteer-address">Address:</label>
+                        <textarea id="volunteer-address" name="volunteer-address" class="field" disabled>Format Address Here From Database</textarea>
+
+                        <label for="volunteer-availability">Availability:</label>
+                        <textarea id="volunteer-availability" name="volunteer-availability" class="field" disabled>Format Availability Here From Database</textarea>
+                    </form>
+                </div>
+                <div class="section-buttons">
+                    <button type="button" class="prev-button">Previous Volunteer</button>
+                    <button type="button" class="next-button">Next Volunteer</button>
+                </div>
+            </div>
+            <div class="event-section">
+                <div class="section-title">
+                    <p>Matched Event:</p>
+                </div>
+                <div class="section-header">
+                    <p>Example Event Name</p>
+                </div>
+                <div class="section-content">
+                    <form>
+                        <label for="event-skills">Skills Required:</label>
+                        <textarea id="event-skills" name="event-skills" class="field" disabled>List Skills Here From Database</textarea>
+
+                        <label for="event-location">Location:</label>
+                        <textarea id="event-location" name="event-location" class="field" disabled>Input Location Here From Database</textarea>
+
+                        <label for="event-date-and-time">Date & Time:</label>
+                        <textarea id="event-date-and-time" name="event-date-and-time" class="field" disabled>Format Date & Time Here From Database</textarea>
+                    </form>
+                </div>
+                <div class="section-buttons">
+                    <button type="button" class="prev-button">Previous Event</button>
+                    <button type="button" class="next-button">Next Event</button>
+                </div>
+            </div>
+        </div>
+        <center><button type="button" class="approve-button">Approve For Event</button></center>
+    </body>
+</html>
