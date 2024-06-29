@@ -18,81 +18,98 @@
         <link href="styles/eventManagement.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <div class="event-form">
-            <div class="form-header">
-                <p>Event Management</p>
-            </div>
-            <div class="form-content">
-                <form id="eventManagementForm">
-
-                    <!--Event Name-->
-                    <label for="event-name">Event Name:</label>
-                    <input type="text" id="event-name" name="event-name" maxlength="100" required class="field">
-
-                    <!--Event Description-->
-                    <label for="event-desc">Event Description:</label>
-                    <textarea id="event-desc" name="event-desc" required class="field"></textarea>
-
-                    <!--Event Description-->
-                    <label for="event-location">Event Location:</label>
-                    <textarea id="event-location" name="event-location" required class="field"></textarea>
-
-                    <!--Required Skills-->
-                    <label for="skills">Skills</label>
-                    <select id="skills" name="skills" data-placeholder="Select skills" multiple required data-multi-select>
-                        <option value="acedemics">Acedemics</option>
-                        <option value="arts">Arts</option>
-                        <option value="computer-and-IT">Computer & IT</option>
-                        <option value="engineering">Engineering</option>
-                        <option value="hobbies-and-crafts">Hobbies & Crafts</option>
-                        <option value="interactive-and-web-dev">Interactive & Web Development</option>
-                        <option value="legal-and-advocacy">Legal & Advocacy</option>
-                        <option value="music">Music</option>
-                        <option value="administrative-and-clerical">Administrative & Clerical</option>
-                        <option value="business-and-management">Business & Management</option>
-                        <option value="disaster-relief">Disaster Relief</option>
-                        <option value="finance">Finance</option>
-                        <option value="HR">HR</option>
-                        <option value="housing-and-facilities">Housing & Facilities</option>
-                        <option value="interpersonal">Interpersonal</option>
-                        <option value="preforming-arts">Preforming Arts</option>
-                        <option value="trades">Trades</option>
-                        <option value="transportation">Transportation</option>
-                        <option value="animals-and-environment">Animals & Environment</option>
-                        <option value="children-and-family">Children & Family</option>
-                        <option value="education-and-literacy">Education & Literacy</option>
-                        <option value="food-service-and-events">Food Service & Events</option>
-                        <option value="healthcare-and-social-services">Healthcare & Social Services</option>
-                        <option value="language-and-culture">Language & Culture</option>
-                        <option value="marketing-and-communications">Marketing & Communications</option>
-                        <option value="sports-and-recreation">Sports & Recreation</option>
-                    </select>
-
-
-                    <!--Urgency-->
-                    <label for="urgency">Urgency: </label>
-                    <select id="urgency" name="urgency" required style="font-family: Jost;" class="field">
-                        <option value="">Select Urgency Level</option>
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-
-                    <!--Date & Time-->
-                    <label for="event-date&time">Date & Time:</label>
-                    <div style=
-                    "display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    column-gap: 20px;">
-                        <input type="date" id="event-date" name="event-date&time" style="font-family: Jost;" required class="field"/>
-                        <input type="time" id="event-time" name="event-date&time" min="00:00" max="24:00" style="font-family: Jost;" required class="field"/>
+        <div style="
+        display: grid;
+        grid-template-columns: auto;
+        ">
+            <nav>
+                <div class = "nav-left">
+                    <img src = "images/uvolLogoColors.png" alt = "Logo" class = "logo">
+                    <a href="">Your Events</a>
+                    <a href="">Manage Volunteers</a>
+                    <a href="adminNotif.html">Notifications</a>
+                    <a href="">My Profile</a>
+                </div>
+                    <button href="" class = "nav-right signout-button">Sign out / Log out</button>
+            </nav>
+            <main>
+                <div class="event-form">
+                    <div class="form-header">
+                        <p>Event Management</p>
                     </div>
+                    <div class="form-content">
+                        <form id="eventManagementForm">
 
-                    
-                    <center><input type="submit" value="Submit" class="submit-button"></center>
+                            <!--Event Name-->
+                            <label for="event-name">Event Name:</label>
+                            <input type="text" id="event-name" name="event-name" maxlength="100" required class="field">
 
-                </form>
-            </div>
+                            <!--Event Description-->
+                            <label for="event-desc">Event Description:</label>
+                            <textarea id="event-desc" name="event-desc" required class="field"></textarea>
+
+                            <!--Event Description-->
+                            <label for="event-location">Event Location:</label>
+                            <textarea id="event-location" name="event-location" required class="field"></textarea>
+
+                            <!--Required Skills-->
+                            <label for="skills">Skills</label>
+                            <select id="skills" name="skills" data-placeholder="Select skills" multiple required data-multi-select>
+                                <option value="acedemics">Acedemics</option>
+                                <option value="arts">Arts</option>
+                                <option value="computer-and-IT">Computer & IT</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="hobbies-and-crafts">Hobbies & Crafts</option>
+                                <option value="interactive-and-web-dev">Interactive & Web Development</option>
+                                <option value="legal-and-advocacy">Legal & Advocacy</option>
+                                <option value="music">Music</option>
+                                <option value="administrative-and-clerical">Administrative & Clerical</option>
+                                <option value="business-and-management">Business & Management</option>
+                                <option value="disaster-relief">Disaster Relief</option>
+                                <option value="finance">Finance</option>
+                                <option value="HR">HR</option>
+                                <option value="housing-and-facilities">Housing & Facilities</option>
+                                <option value="interpersonal">Interpersonal</option>
+                                <option value="preforming-arts">Preforming Arts</option>
+                                <option value="trades">Trades</option>
+                                <option value="transportation">Transportation</option>
+                                <option value="animals-and-environment">Animals & Environment</option>
+                                <option value="children-and-family">Children & Family</option>
+                                <option value="education-and-literacy">Education & Literacy</option>
+                                <option value="food-service-and-events">Food Service & Events</option>
+                                <option value="healthcare-and-social-services">Healthcare & Social Services</option>
+                                <option value="language-and-culture">Language & Culture</option>
+                                <option value="marketing-and-communications">Marketing & Communications</option>
+                                <option value="sports-and-recreation">Sports & Recreation</option>
+                            </select>
+
+
+                            <!--Urgency-->
+                            <label for="urgency">Urgency: </label>
+                            <select id="urgency" name="urgency" required style="font-family: Jost;" class="field">
+                                <option value="">Select Urgency Level</option>
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+
+                            <!--Date & Time-->
+                            <label for="event-date&time">Date & Time:</label>
+                            <div style=
+                            "display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            column-gap: 20px;">
+                                <input type="date" id="event-date" name="event-date&time" style="font-family: Jost;" required class="field"/>
+                                <input type="time" id="event-time" name="event-date&time" min="00:00" max="24:00" style="font-family: Jost;" required class="field"/>
+                            </div>
+
+                            
+                            <center><input type="submit" value="Submit" class="submit-button"></center>
+
+                        </form>
+                    </div>
+                </div>
+            </main>
         </div>
         <script src="scripts/MultiSelect.js"></script>
     </body>
