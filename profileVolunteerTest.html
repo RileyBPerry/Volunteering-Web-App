@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profile-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.profile-card h2 {
+    margin-top: 0;
+    font-size: 28px;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.profile-card .address {
+    margin-bottom: 20px;
+}
+
+.profile-card .details {
+    text-align: left;
+}
+
+.profile-card .label {
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-card .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-card .tag {
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.profile-card .availability {
+    margin-top: 10px;
+}
+
+.profile-card .availability table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.profile-card .availability th, .profile-card .availability td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.profile-card .actions {
+    margin-top: 20px;
+}
+
+.profile-card .actions a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    padding: 8px 20px;
+    border: 1px solid #007BFF;
+    border-radius: 4px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.profile-card .actions a:hover {
+    background-color: #007BFF;
+    color: white;
+}
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <h2>Jane Doe</h2>
+        <p><span class="label">Address 1:</span></p>
+        <p><span class="label">Address 2:</span></p>
+        <p><span class="label">City:</span></p>
+        <p><span class="label">State:</span></p>
+        <p><span class="label">Zip Code:</span></p>
+        <p><span class="label">Skills:</p>
+        <div class="skills">
+        </div>
+        <p><span class="label">Preferences:</span></p>
+        <p><span class="label">Availability:</span></p>
+        <div class="availability">
+        </div>
+	<a href="work_history.html" class="work-history-link">View Work History</a><br>
+        <a href="user_profile_management.html" class="edit-profile-link">Edit Profile</a>
+    </div>
+</body>
+</html>
