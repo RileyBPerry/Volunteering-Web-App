@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer History</title>
+    <link rel="stylesheet" href="styles/volHistory.css">
+    <style>
+        body {
+            font-family: 'Jost', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .background {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: white;
+        }
+        .container {
+            width: 90%;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav {
+            background-color: #d4d4d4;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            border-radius: 10px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav a, nav button {
+            padding: 0 10px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .nav-left {
+            display: flex;
+            align-items: center;
+        }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        nav .logo {
+            height: 100px;
+            width: auto;
+            border-radius: 20px;
+        }
+        .signout-button {
+            background-color: #219E24;
+            border-radius: 10px;
+            padding: 10px 10px;
+            color: white;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            margin-left: auto;
+            margin-right: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .signout-button:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .header-row {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px 0;
+            background-color: #f2f2f2;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <nav>
+                <div class="nav-left">
+                    <img src="images/uvolLogoColors.png" alt="Logo" class="logo">
+                    <a href="">Home</a>
+                    <a href="">Find Events</a>
+                    <a href="volunteerNotif.html">Notifications</a>
+                    <a href="">My Profile</a>
+                </div>
+                <button href="" class="nav-right signout-button">Sign out/Log out</button>
+            </nav>
+            <main>
+                <div class="header-row">History</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Date</th>
+                            <th>Times</th>
+                            <th>Location</th>
+                            <th>Performance Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+            <footer>
+                <p>&copy; 2024 UVolunteer</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
