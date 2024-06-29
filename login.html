@@ -7,19 +7,48 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: white;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            background-color: #d4d4d4;
+            color: black;
+            padding: 10px 20px;
+            justify-content: center;
+            width: 90%; 
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add some shadow for better separation */
+        }
+        .logo {
+            height: 100%;
+            width: auto;
+            max-height: 100px;
+            margin-right: 0px;
+            margin-left: 0px;
+            border-radius: 10px;
+        }
+        .welcome {
+            font-size: 30px;
+            font-weight: bold;
+            
+        }
+
+
         .login-form {
-            background-color: #fff;
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            margin-top: 30px;
         }
         .login-form h2 {
             margin-top: 0;
@@ -54,19 +83,27 @@
         .login-form button:hover {
             background-color: #4cae4c;
         }
-        .register-link {
-            display: block;
-            text-align: center;
-            margin-top: 10px;
-            color: #5cb85c;
-            text-decoration: none;
-        }
-        .register-link:hover {
-            text-decoration: underline;
+
+        .container {
+            width: 90%;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
 <body>
+    <div class = "container">
+    <div class = "header">
+        <img src = "images/uvolLogoColors.png" alt = "Logo" class = "logo">
+    </div>
+    <div class = "top-bar">
+        <span class = "welcome">Welcome back!</span>
+    </div>
 
 <div class="login-form">
     <h2>Login</h2>
@@ -76,10 +113,12 @@
         
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
+
+	<a class="register-link" href="register.html">Don't have an account? Register here</a>
         
-        <button type="submit">Login</button>
+        <button type="submit">Login</button><br>
     </form>
-    <a class="register-link" href="register.html">Don't have an account? Register here</a>
+</div>
 </div>
 
 </body>
