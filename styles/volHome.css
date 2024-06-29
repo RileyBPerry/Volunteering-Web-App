@@ -1,0 +1,150 @@
+body {
+    font-family: Jost, Arial, Helvetica, sans-serif;
+    align-items: center;
+}
+
+/*white background*/
+.background {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    background-color: white;
+    align-items: center;
+}
+
+/* Navigation Bar */
+
+nav {
+    background-color: #d4d4d4;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+nav a, nav button {
+    padding: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+nav .logo{
+    height: 100px;
+    width: auto;
+    
+    border-radius: 20px;
+}
+
+.signout-button {
+    background-color: #219E24;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.signout-button:hover {
+    text-decoration: underline;
+    
+}
+
+/* Body */
+
+.container {
+    width: 90%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    height: auto;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
+
+.denim {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.img-container {
+    position: relative;
+}
+
+.quote {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    color: black;
+    
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    max-height: none;
+    overflow: auto;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.words {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.person {
+    color: gray;
+    font-size: 18px;
+}
+
+.sign-up {
+    background-color: #219E24;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.already-member {
+    color: gray;
+    font-size: 12px;
+    font-weight: bold;
+}
+
