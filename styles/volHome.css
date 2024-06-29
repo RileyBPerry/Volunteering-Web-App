@@ -1,3 +1,7 @@
+html,body,button,input{
+    font-family: jost, sans-serif;
+}
+
 body {
     font-family: Jost, Arial, Helvetica, sans-serif;
     align-items: center;

@@ -1,5 +1,5 @@
-body {
-    font-family: 'Jost', sans-serif;
+html,body,button,input{
+    font-family: jost, sans-serif;
 }
 
 /*white background*/
