@@ -7,19 +7,48 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: white;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
         }
+
+        .top-bar {
+            display: flex;
+            align-items: center;
+            background-color: #d4d4d4;
+            color: black;
+            padding: 10px 20px;
+            justify-content: center;
+            width: 90%; 
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            height: 100%;
+            width: auto;
+            max-height: 100px;
+            margin-right: 0px;
+            margin-left: 0px;
+            border-radius: 10px;
+        }
+        .welcome {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+
         .registration-form {
-            background-color: #fff;
+            background-color: white;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            margin-top: 30px;
         }
         .registration-form h2 {
             margin-top: 0;
@@ -64,21 +93,41 @@
         .register-link:hover {
             text-decoration: underline;
         }
+
+        .container {
+            width: 90%;
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
+<div class = "container">
+        <div class = "header">
+            <img src = "images/uvolLogoColors.png" alt = "Logo" class = "logo">
+        </div>
+        
+        <div class = "top-bar">
+            <span class = "welcome">Welcome to UVolunteer!</span>
+        </div>
 
-<div class="registration-form">
-    <h2>Register Account</h2>
-    <form action="register.php" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        
-        <button type="submit">Submit</button>
-    </form>
+    <div class="registration-form">
+        <h2>Registration</h2>
+        <form action="register.php" method="post">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit">Sign Up</button>
+        </form>
+    </div>
 </div>
 
 </body>
