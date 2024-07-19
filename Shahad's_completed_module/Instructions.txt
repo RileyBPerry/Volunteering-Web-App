@@ -1,0 +1,14 @@
+How to run this code:
+
+1. use the terminal to cd to the page directiory that you want
+   -> example: cd volunteer_matching_page
+               cd event_management_page
+               cd -
+
+2. run the server.js in the terminal
+   -> example: node server.js
+
+3. you will get a link to the localhost that containes the page
+   -> Volunteer Matching Page    -> localhost:3001
+   -> Event Management Form Page -> localhost:3002
+
