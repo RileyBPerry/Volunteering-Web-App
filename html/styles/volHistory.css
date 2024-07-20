@@ -1,0 +1,88 @@
+html,body,button,input{
+    font-family: jost, sans-serif;
+}
+
+/*white background*/
+.background {
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    background-color: white;
+}
+
+/* Navigation Bar */
+
+nav {
+    background-color: #d4d4d4;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+nav a, nav button {
+    padding: 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+nav .logo{
+    height: 100px;
+    width: auto;
+    
+    border-radius: 20px;
+}
+
+.signout-button {
+    background-color: #219E24;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.signout-button:hover {
+    text-decoration: underline;
+    
+}
+
+/* Body */
+
+.container {
+    width: 90%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    height: auto;
+    justify-content: center;
+    
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+}
