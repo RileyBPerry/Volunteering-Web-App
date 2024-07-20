@@ -1,0 +1,6 @@
+How to run this code:
+
+1. Run index.js
+
+2. In browser type: localhost:5000
+
