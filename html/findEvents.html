@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Notifications</title>
+    <title>Find Events</title>
 
     <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!---->
-    <link rel="stylesheet" href="styles/adNotif.css">
+    
+    <link rel="stylesheet" href="styles/findEvents.css">
     
 </head>
 <body>
@@ -19,20 +20,22 @@
             <nav>
                 <div class="nav-left">
                     <img src="images/uvolLogoColors.png" alt="Logo" class="logo">
-                    <a href="">Home</a>
-                    <a href="">My Events</a>
-                    <a href="">Manage Volunteers</a>
-                    <a href="">My Profile</a>
+                    <a href="volHome.html">Home</a>
+                    <a href="volHistory.html">My History</a>
+                    <a href="volNotif.html">Notifications</a>
+                    <a href="volProfManagement.html">My Profile</a>
                 </div>
                 <button href="" class="nav-right signout-button">Sign out/Log out</button>
             </nav>
             <main>
-                <div class="header-row">Notifications</div>
+                <div class="header-row">Events</div>
                 <table>
                     <thead>
                         <tr>
-                            <th>Updates</th>
-                            <th>Reminders</th>
+                            <th>Upcoming</th>
+                            <th>Recommended</th>
+                            <th>Saved for Later</th>
+
                         </tr>
                     </thead>
                     <tbody>
