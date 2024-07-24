@@ -93,20 +93,43 @@
                                 <option value="high">High</option>
                             </select>
 
+
+                            <!--Date & Time-->
+                            <label for="event-spots">Number of Spots Available:</label>
+                            <input type="number" id="event-spots" name="event-spots" required class="field" min="1">
+
+
                             <!--Date & Time-->
                             <div style=
                             "display: grid;
                             grid-template-columns: 1fr 1fr;
                             column-gap: 20px;">
                                 <div>
-                                    <label for="event-date">Event Date:</label>
-                                    <input type="date" id="event-date" name="event-date" style="font-family: Jost;" required class="field"/>
+                                    <label for="event-start-date">Event Start Date:</label>
+                                    <input type="date" id="event-start-date" name="event-start-date" style="font-family: Jost;" required class="field"/>
                                 </div>
                                 <div>
-                                    <label for="event-time">Event Time:</label>
-                                    <input type="time" id="event-time" name="event-time" min="00:00" max="24:00" style="font-family: Jost;" required class="field"/>
+                                    <label for="event-start-time">Event Start Time:</label>
+                                    <input type="time" id="event-start-time" name="event-start-time" min="00:00" max="24:00" style="font-family: Jost;" required class="field"/>
                                 </div>
                             </div>
+
+                            <div style=
+                            "display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            column-gap: 20px;">
+                                <div>
+                                    <label for="event-end-date">Event End Date:</label>
+                                    <input type="date" id="event-end-date" name="event-end-date" style="font-family: Jost;" required class="field"/>
+                                </div>
+                                <div>
+                                    <label for="event-end-time">Event End Time:</label>
+                                    <input type="time" id="event-end-time" name="event-end-time" min="00:00" max="24:00" style="font-family: Jost;" required class="field"/>
+                                </div>
+                            </div>
+
+
+
 
                             
                             <center><button type="submit" value="Submit" class="submit-button">Submit</button></center>
