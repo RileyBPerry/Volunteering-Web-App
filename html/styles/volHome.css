@@ -5,12 +5,13 @@ html,body,button,input{
 body {
     font-family: Jost, Arial, Helvetica, sans-serif;
     align-items: center;
+    justify-content: center;
 }
 
 /*white background*/
 .background {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: auto;
     background-color: white;
     align-items: center;
@@ -85,8 +86,9 @@ nav .logo{
     border-radius: 10px;
     display: inline-block;
     height: auto;
-    align-items: center;
+    place-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
 }
 
 main {

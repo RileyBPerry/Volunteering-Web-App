@@ -5,7 +5,7 @@ html,body,button,input{
 /*white background*/
 .background {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: auto;
     background-color: white;
 }
