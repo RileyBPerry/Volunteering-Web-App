@@ -14,24 +14,7 @@
         html,body,button,input{
             font-family: jost, sans-serif;
         }
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        .background {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background-color: white;
-        }
-        .container {
-            width: 90%;
-            background-color: #f8f8f8;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+        
         nav {
             background-color: #d4d4d4;
             height: 60px;
@@ -98,7 +81,7 @@
             background-color: #f2f2f2;
         }
         footer {
-            text-align: center;
+            text-align: left;
             margin-top: 20px;
         }
         .header-row {
@@ -119,11 +102,13 @@
                 <div class="nav-left">
                     <img src="images/uvolLogoColors.png" alt="Logo" class="logo">
                     <a href="adHome.html">Home</a>
+                    <a href="eventManagement.html">Manage Events</a>
                     <a href="volunteerMatchingForm.html">Manage Volunteers</a>
                     <a href="adNotif.html">Notifications</a>
-                    <a href="adProfManagement.html">My Profile</a>
+                    <a href="profileAdminTest.html">My Profile</a>
                 </div>
-                <button href="" class="nav-right signout-button">Sign out/Log out</button>
+                <button onclick="location.href='home.html';" class="nav-right signout-button">Sign out/Log out</button>
+
             </nav>
             <main>
                 <div class="header-row">Your Events</div>

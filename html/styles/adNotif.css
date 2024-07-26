@@ -80,10 +80,9 @@ main {
 }
 
 .container {
-    max-width: 1200px; /* Adjust this value to make the page wider */
     margin: 0 auto;
     padding: 20px;
-
+    width: 90%;
     background-color: #f8f8f8;
     border-radius: 10px;
     display: inline-block;

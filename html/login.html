@@ -21,6 +21,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            
         }
 
         .top-bar {
@@ -82,13 +83,13 @@
             padding: 10px;
             border: none;
             border-radius: 4px;
-            background-color: #5cb85c;
+            background-color: #219E24;
             color: #fff;
             font-size: 16px;
             cursor: pointer;
         }
         .login-form button:hover {
-            background-color: #4cae4c;
+            text-decoration: underline;
         }
 
         .container {
@@ -101,6 +102,20 @@
             align-items: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
+        .register-link{
+            color: black;
+            text-decoration: underline;
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        .register-link-div{
+            padding-top: 15px;
+            padding-bottom: 0px;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -120,10 +135,11 @@
         
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
-
-	<a class="register-link" href="register.html">Don't have an account? Register here</a>
         
         <button type="submit">Login</button><br>
+        <div class = "register-link-div">
+            <a class="register-link" href="register.html">Don't have an account? Register here</a>
+        </div>
     </form>
 </div>
 </div>

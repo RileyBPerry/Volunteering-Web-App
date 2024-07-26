@@ -9,19 +9,29 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!---->
+
+    <link rel="stylesheet" href="styles/profileVolunteerTest.css">
+
     <style>
         html,body,button,input{
             font-family: jost, sans-serif;
         }
 
-        body {
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
+
+        .background {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: auto;
+            background-color: white;
+        }
+
+        main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
         }
 
         .profile-card {
@@ -33,6 +43,9 @@
             width: 100%;
             box-sizing: border-box;
             text-align: center;
+            position: relative;
+            justify-content: center;
+            align-items: center;
         }
 
         .profile-card h2 {
@@ -77,36 +90,60 @@
         }
 
         .profile-card .actions a:hover {
-            background-color: #17661e; /* Darker shade when hovered */
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="profile-card">
-        <h2>Jane Doe</h2>
-        <div class="details">
-            <p><span class="label">Address 1:</span></p>
-            <p><span class="label">Address 2:</span></p>
-            <p><span class="label">City:</span></p>
-            <p><span class="label">State:</span></p>
-            <p><span class="label">Zip Code:</span></p>
-        </div>
-        <div class="skills">
-            <p><span class="label">Skills:</span></p>
-            <!-- Add skills here -->
-        </div>
-        <div class="preferences">
-            <p><span class="label">Preferences:</span></p>
-            <!-- Add preferences here -->
-        </div>
-        <div class="availability">
-            <p><span class="label">Availability:</span></p>
-            <!-- Add availability here -->
-        </div>
-        <div class="actions">
-            <a href="work_history.html" class="work-history-link">View Work History</a>
-            <a href="user_profile_management.html" class="edit-profile-link">Edit Profile</a>
+
+    <div class = "background">
+        <div class = "container">
+            <nav>
+                <div class = "nav-left">
+                    <img src = "images/uvolLogoColors.png" alt = "Logo" class = "logo">
+                    <a href="volHome.html">Home</a>
+                    <a href="findEvents.html">Find Events</a>
+                    <a href="volNotif.html">Notifications</a>
+                    <a href="volHistory.html">My History</a>
+                    
+                </div>
+                <button onclick="location.href='home.html';" class="nav-right signout-button">Sign out/Log out</button>
+
+            </nav>
+            <main>
+                <div class="profile-card">
+                    <h2>Jane Doe</h2>
+                    <div class="details">
+                        <p><span class="label">Address 1:</span></p>
+                        <p><span class="label">Address 2:</span></p>
+                        <p><span class="label">City:</span></p>
+                        <p><span class="label">State:</span></p>
+                        <p><span class="label">Zip Code:</span></p>
+                    </div>
+                    <div class="skills">
+                        <p><span class="label">Skills:</span></p>
+                        <!-- Add skills here -->
+                    </div>
+                    <div class="preferences">
+                        <p><span class="label">Preferences:</span></p>
+                        <!-- Add preferences here -->
+                    </div>
+                    <div class="availability">
+                        <p><span class="label">Availability:</span></p>
+                        <!-- Add availability here -->
+                    </div>
+                    <div class="actions">
+                        <a href="user_profile_management.html" class="edit-profile-link">Edit Profile</a>
+                    </div>
+                </div>
+                
+            </main>
+            <footer>
+                <p>&copy; 2024 UVolunteer</p>
+            </footer>
         </div>
     </div>
+    
+    
 </body>
 </html>

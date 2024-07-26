@@ -3,13 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer Homepage</title>
+    <title>Homepage</title>
     <link rel="stylesheet" href="styles/volHome.css">
     <!--font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!---->
+
+    <style>
+     .home-logo{
+        height: 85px;
+        width: auto;
+        justify-content: left;
+        align-items: left;
+        border-radius: 5px;
+        max-width: 100%;
+    }
+
+    .welcome {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .sign-up-button{
+        background-color: #219E24;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: white;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 15px;
+    }
+
+    .already-member {
+    color: gray;
+    font-size: 15px;
+    font-weight: bold;
+    }
+
+    .login-already{
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+
+    </style>
 </head>
 <body>
     <header>
@@ -17,16 +58,13 @@
     </header>
         <div class = "background"> 
             <div class = "container">
-                <nav>
+                
                     <div class = "nav-left">
-                        <img src = "images/uvolLogoColors.png" alt = "Logo" class = "logo">
-                        <a href="">Welcome to UVolunteer</a>
+                        <img src = "images/uvolLogoColors.png" alt = "Logo" class = "home-logo">
+                        <p class = "welcome">Welcome to UVolunteer!</p>
                         
                     </div>
-
-                        <button href="" class = "nav-right signout-button">Sign out/Log out</button>
-                    
-                </nav>
+                
                 <main>
                     <div class = "img-container">
                         <img src = "images/denim-bottle.webp" alt = "picture" class = "denim">
@@ -34,13 +72,12 @@
                             <p class = "essense">"What is the essence of life? 
                                 To serve others and do good."
                             </p>
-
                             <p class = "aristotle">-Aristotle</p>
 
-                            <button href = "" class = "sign-up">Sign up to help out!</button>
-
-                            <p class = "already-member"> Already have an account? Log in!</p>
-                        
+                            <button onclick="location.href='registration.html';" class="sign-up-button">Sign up now!</button>
+                            <div class = "login-already">
+                                <a href="login.html" class = "already-member"> Already have an account? Log in!</a>
+                            </div>
                         </div>    
                     </div>
                     

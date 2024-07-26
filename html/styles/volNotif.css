@@ -1,15 +1,14 @@
 html,body,button,input{
     font-family: jost, sans-serif;
 }
-body {
-    justify-content: center;
-}
+
 
 /*white background*/
 .background {
     display: flex;
     justify-content: center;
     height: auto;
+    align-items: center;
     background-color: white;
 }
 
@@ -82,10 +81,9 @@ main {
 }
 
 .container {
-    max-width: 1200px; /* Adjust this value to make the page wider */
+    width: 90%; /* Adjust this value to make the page wider */
     margin: 0 auto;
     padding: 20px;
-
     background-color: #f8f8f8;
     border-radius: 10px;
     display: inline-block;
