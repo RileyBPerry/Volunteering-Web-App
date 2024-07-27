@@ -4,4 +4,23 @@ to run the modules:
 
 1. cd to the module wanted
 
-2. find
+2. find either a "index.js" file or a "server.js" file and open it
+
+3. please add you user and password for MySQL
+
+4. run the code in the terminal using 
+    node index.js
+or  node server.js
+
+5. for in your web-browser
+use:                        for:
+-----                       ------
+localhost:3002              Event Management page
+localhost:5001              login page
+localhost:5001/register     register page
+localhost:5002              User Profile page
+localhost:5003              Volunteer History Page
+
+- if there is any problem with running the modules please let us know, because from our end everything works.
+
+thank you.

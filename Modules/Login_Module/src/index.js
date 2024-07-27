@@ -13,9 +13,9 @@ app.set("views", path.join(__dirname, "views"));
 // Create a connection to the database
 const connection = mysql.createConnection({
     host: 'localhost',
-    user: 'root', // Replace with your MySQL username
-    password: '#Shahodi2002', // Replace with your MySQL password
-    database: 'vol_app' // Replace with your MySQL database name
+    user: '', // Replace with your MySQL username
+    password: '', // Replace with your MySQL password
+    database: 'vol_app'
 });
 
 // Connect to the database
