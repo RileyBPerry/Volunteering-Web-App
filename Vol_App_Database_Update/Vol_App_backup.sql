@@ -87,14 +87,16 @@ CREATE TABLE `Event_details` (
   `eventName` varchar(100) DEFAULT NULL,
   `eventDescription` text,
   `orgName` varchar(100) DEFAULT NULL,
-  `location` varchar(100) DEFAULT NULL,
-  `eventDate` date DEFAULT NULL,
-  `eventStart` time DEFAULT NULL,
-  `eventEnd` time DEFAULT NULL,
+  `location` text,
+  `eventStartDate` date DEFAULT NULL,
+  `eventStartTime` time DEFAULT NULL,
+  `eventEndDate` date DEFAULT NULL,
+  `eventEndTime` time DEFAULT NULL,
   `duration` float DEFAULT NULL,
   `creatorId` int DEFAULT NULL,
   `urgency` varchar(100) DEFAULT NULL,
   `spots` int DEFAULT NULL,
+  `reqSkills` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`eventId`),
   KEY `creatorId` (`creatorId`),
   CONSTRAINT `event_details_ibfk_1` FOREIGN KEY (`creatorId`) REFERENCES `Admins` (`userId`)
@@ -107,7 +109,12 @@ CREATE TABLE `Event_details` (
 
 LOCK TABLES `Event_details` WRITE;
 /*!40000 ALTER TABLE `Event_details` DISABLE KEYS */;
-INSERT INTO `Event_details` VALUES (11,'Community Cleanup','A neighborhood cleanup event to help keep our community clean.','Project Cure','Central Park','2024-08-01','06:00:00','08:00:00',2,10000,'Medium',15),(12,'Book Drive','Collect and distribute books to local schools.','Books for Kids','Local Library','2024-08-02','07:00:00','09:00:00',1.5,10002,'High',10),(13,'Pet Adoption Fair','Event to help find homes for pets.','Houston Humane Society','Pet Shelter','2024-08-03','08:00:00','10:00:00',3,10003,'Low',20),(14,'Blood Donation Camp','Help save lives by donating blood.','GiveBlood','Community Center','2024-08-04','09:00:00','11:00:00',2.5,10004,'Medium',12),(25,'Community Garden Planting','Help plant new flowers and vegetables in the community garden.','Helping Hands of Houston','Community Garden','2024-08-05','07:00:00','09:00:00',2,10000,'Medium',8),(27,'Community Garden Planting','Help plant new flowers and vegetables in the community garden.','Helping Hands of Houston','Community Garden','2024-08-05','07:00:00','09:00:00',2,10000,'Medium',8);
+INSERT INTO `Event_details` VALUES 
+(11,'Community Cleanup','A neighborhood cleanup event to help keep our community clean.','Project Cure','Central Park','2024-08-01','06:00:00','2024-08-01','08:00:00',2,10000,'Medium',15),
+(12,'Book Drive','Collect and distribute books to local schools.','Books for Kids','Local Library','2024-08-02','07:00:00','2024-08-01','09:00:00',1.5,10002,'High',10),
+(13,'Pet Adoption Fair','Event to help find homes for pets.','Houston Humane Society','Pet Shelter','2024-08-03','08:00:00','2024-08-01','10:00:00',3,10003,'Low',20),
+(14,'Blood Donation Camp','Help save lives by donating blood.','GiveBlood','Community Center','2024-08-04','09:00:00','2024-08-01','11:00:00',2.5,10004,'Medium',12),
+(25,'Community Garden Planting','Help plant new flowers and vegetables in the community garden.','Helping Hands of Houston','Community Garden','2024-08-05','07:00:00','2024-08-01','09:00:00',2,10000,'Medium',8),
 /*!40000 ALTER TABLE `Event_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +178,8 @@ DROP TABLE IF EXISTS `UserCredentials`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `UserCredentials` (
   `userId` int NOT NULL AUTO_INCREMENT,
-  `psword` varchar(100) DEFAULT NULL,
+  `username` varchar(250) NOT NULL UNIQUE,
+  `password` varchar(250) NOT NULL,
   PRIMARY KEY (`userId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10015 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -182,7 +190,7 @@ CREATE TABLE `UserCredentials` (
 
 LOCK TABLES `UserCredentials` WRITE;
 /*!40000 ALTER TABLE `UserCredentials` DISABLE KEYS */;
-INSERT INTO `UserCredentials` VALUES (10000,'password1'),(10001,'password2'),(10002,'password3'),(10003,'password4'),(10004,'password5'),(10005,'password6'),(10006,'password7'),(10007,'password8'),(10008,'password9'),(10009,'password10'),(10010,'password11'),(10011,'password12'),(10012,'password13'),(10013,'password14'),(10014,'password15');
+INSERT INTO `UserCredentials` VALUES (10000,'example1@gmail.com','password1'),(10001,'example2@gmail.com','password2'),(10002,'example3@gmail.com','password3'),(10003,'example4@gmail.com','password4'),(10004,'example5@gmail.com','password5'),(10005,'example6@gmail.com','password6'),(10006,'example7@gmail.com','password7'),(10007,'example8@gmail.com','password8'),(10008,'example9@gmail.com','password9'),(10009,'example10@gmail.com','password10'),(10010,'example11@gmail.com','password11'),(10011,'example12@gmail.com','password12'),(10012,'example13@gmail.com','password13'),(10013,'example14@gmail.com','password14'),(10014,'example15@gmail.com','password15');
 /*!40000 ALTER TABLE `UserCredentials` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,15 +202,19 @@ DROP TABLE IF EXISTS `UserProfile`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `UserProfile` (
-  `userId` int NOT NULL,
+  `userId` int NOT NULL AUTO_INCREMENT,
   `email` varchar(100) DEFAULT NULL,
   `fullName` varchar(100) DEFAULT NULL,
-  `userRole` varchar(100) DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
+  `skills` varchar(100) DEFAULT NULL,
+  `address1` varchar(255) DEFAULT NULL,
+  `address2` varchar(255) DEFAULT NULL,
   `city` varchar(100) DEFAULT NULL,
   `state` varchar(100) DEFAULT NULL,
   `zipcode` int DEFAULT NULL,
   `regDate` date DEFAULT NULL,
+  `preferences` text,
+  `availability` varchar(250) DEFAULT NULL,
+  `userRole` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`userId`),
   CONSTRAINT `userprofile_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `UserCredentials` (`userId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -214,7 +226,7 @@ CREATE TABLE `UserProfile` (
 
 LOCK TABLES `UserProfile` WRITE;
 /*!40000 ALTER TABLE `UserProfile` DISABLE KEYS */;
-INSERT INTO `UserProfile` VALUES (10000,'user10000@example.com','Alice Jonhnson','admin','123 Elm St','Houston','Texas',62701,'2024-07-01'),(10001,'user10001@example.com','Keanu Reeves','volunteer','456 Oak St','Katy','Texas',62701,'2024-07-02'),(10002,'user10002@example.com','Scarlett Johanson','volunteer','789 Pine St','Pasedena','Texas',62701,'2024-07-03'),(10003,'user10003@example.com','Ivy Cooper','admin','101 Maple St','Spring','Texas',62701,'2024-07-04'),(10004,'user10004@example.com','Bobby Singer','volunteer','202 Birch St','Woodlands','Texas',62701,'2024-07-05'),(10005,'user10005@example.com','Emily Jackson','admin','303 Cedar St','Spring','Texas',62701,'2024-07-06'),(10006,'user10006@example.com','Olivia Harris','volunteer','404 Fir St','Cypress','Texas',62701,'2024-07-07'),(10007,'user10007@example.com','Maryanne Scout','volunteer','505 Spruce St','Sugar Land','Texas',62701,'2024-07-08'),(10008,'user10008@example.com','Margaret Thatcher','admin','606 Willow St','Conroe','Texas',62701,'2024-07-09'),(10009,'user10009@example.com','Jessica Cliff','volunteer','707 Ash St','Cinco Ranch','Texas',62701,'2024-07-10'),(10010,'user10010@example.com','Marianna Lee','volunteer','808 Pine St','Richmond','Texas',62701,'2024-07-11'),(10011,'user10011@example.com','Dallas Winston','admin','909 Oak St','Humble','Texas',62701,'2024-07-12'),(10012,'user10012@example.com','Austin Miller','volunteer','1010 Elm St','Channelview','Texas',62701,'2024-07-13'),(10013,'user10013@example.com','Sunny King','admin','1111 Maple St','Aldine','Texas',62701,'2024-07-14'),(10014,'user10014@example.com','Darris Rogers','volunteer','1212 Cedar St','Missouri City','Texas',62701,'2024-07-15');
+INSERT INTO `UserProfile` VALUES (10000,'user10000@example.com','Alice Jonhnson','admin','123 Elm St', '','Houston','Texas',62701,'2024-07-01'),(10001,'user10001@example.com','Keanu Reeves','volunteer','456 Oak St','','Katy','Texas',62701,'2024-07-02'),(10002,'user10002@example.com','Scarlett Johanson','volunteer','789 Pine St','Pasedena','Texas',62701,'2024-07-03'),(10003,'user10003@example.com','Ivy Cooper','admin','101 Maple St','','Spring','Texas',62701,'2024-07-04'),(10004,'user10004@example.com','Bobby Singer','volunteer','202 Birch St','','Woodlands','Texas',62701,'2024-07-05'),(10005,'user10005@example.com','Emily Jackson','admin','303 Cedar St','','Spring','Texas',62701,'2024-07-06'),(10006,'user10006@example.com','Olivia Harris','volunteer','404 Fir St','','Cypress','Texas',62701,'2024-07-07'),(10007,'user10007@example.com','Maryanne Scout','volunteer','505 Spruce St','','Sugar Land','Texas',62701,'2024-07-08'),(10008,'user10008@example.com','Margaret Thatcher','admin','606 Willow St','','Conroe','Texas',62701,'2024-07-09'),(10009,'user10009@example.com','Jessica Cliff','volunteer','707 Ash St','','Cinco Ranch','Texas',62701,'2024-07-10'),(10010,'user10010@example.com','Marianna Lee','volunteer','808 Pine St','','Richmond','Texas',62701,'2024-07-11'),(10011,'user10011@example.com','Dallas Winston','admin','909 Oak St','','Humble','Texas',62701,'2024-07-12'),(10012,'user10012@example.com','Austin Miller','volunteer','1010 Elm St','','Channelview','Texas',62701,'2024-07-13'),(10013,'user10013@example.com','Sunny King','admin','1111 Maple St','','Aldine','Texas',62701,'2024-07-14'),(10014,'user10014@example.com','Darris Rogers','volunteer','1212 Cedar St','','Missouri City','Texas',62701,'2024-07-15');
 /*!40000 ALTER TABLE `UserProfile` ENABLE KEYS */;
 UNLOCK TABLES;
 
