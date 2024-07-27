@@ -117,9 +117,8 @@
                     <thead>
                         <tr>
                             <th>Event Name</th>
-                            <th>Date</th>
-                            <th>Times</th>
-                            <th>Location</th>
+                            <th>hoursWorked</th>
+                            <th>feedback</th>
                             <th>Performance Score</th>
                         </tr>
                     </thead>
@@ -139,5 +138,36 @@
             </footer>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('/api/history')
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('tbody');
+                    data.forEach(entry => {
+                        const tr = document.createElement('tr');
+
+                        const eventNameTd = document.createElement('td');
+                        eventNameTd.textContent = entry.eventName || 'No event name available';
+                        tr.appendChild(eventNameTd);
+
+                        const hoursWorkedTd = document.createElement('td');
+                        hoursWorkedTd.textContent = entry.hoursWorked || 'No hours available';
+                        tr.appendChild(hoursWorkedTd);
+
+                        const feedbackTd = document.createElement('td');
+                        feedbackTd.textContent = entry.feedback || 'No feedback available';
+                        tr.appendChild(feedbackTd);
+
+                        const performanceScoreTd = document.createElement('td');
+                        performanceScoreTd.textContent = entry.performanceScore || 'No score available';
+                        tr.appendChild(performanceScoreTd);
+
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Error fetching volunteer history:', error));
+        });
+    </script>
 </body>
 </html>
