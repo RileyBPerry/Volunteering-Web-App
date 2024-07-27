@@ -19,6 +19,12 @@
 -- Table structure for table `Admins`
 --
 
+-- Create database
+CREATE DATABASE IF NOT EXISTS vol_app;
+
+-- Use the database
+USE vol_app;
+
 DROP TABLE IF EXISTS `Admins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
