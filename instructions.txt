@@ -1,0 +1,7 @@
+For the database, you need to have a MySQL server installed and running on your local device.
+
+to run the modules:
+
+1. cd to the module wanted
+
+2. find
