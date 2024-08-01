@@ -62,11 +62,12 @@ nav .logo{
     cursor: pointer;
     margin-left: auto;
     margin-right: 20px;
+    cursor: pointer;
+    transition-duration: 0.15s;
 }
 
 .signout-button:hover {
-    text-decoration: underline;
-    
+    background-color: rgb(26, 124, 27);
 }
 
 /* Body */
