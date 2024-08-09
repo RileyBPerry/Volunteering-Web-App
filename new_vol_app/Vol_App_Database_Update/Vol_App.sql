@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.39, for macos14 (arm64)
 --
--- Host: localhost    Database: Vol_App2
+-- Host: localhost    Database: Vol_App
 -- ------------------------------------------------------
 -- Server version	8.0.39
 
@@ -18,6 +18,12 @@
 --
 -- Table structure for table `Admins`
 --
+
+-- Create database
+CREATE DATABASE IF NOT EXISTS vol_app;
+
+-- Use the database
+USE vol_app;
 
 DROP TABLE IF EXISTS `Admins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
