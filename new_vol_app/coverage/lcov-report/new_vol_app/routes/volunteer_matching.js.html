@@ -501,7 +501,7 @@ let currentEventIndex = 0; // Initialize with a starting value
 // Endpoint to get current volunteer data
 router.get('/api/current-volunteer', async (req, res) =&gt; {
     try {
-        const volunteers = await queryDatabase('SELECT * FROM userprofile LIMIT 1 OFFSET ?', [currentVolunteerIndex]);
+        const volunteers = await queryDatabase('SELECT * FROM UserProfile LIMIT 1 OFFSET ?', [currentVolunteerIndex]);
         const volunteer = volunteers[0];
         if (volunteer) {
             res.json({
@@ -524,7 +524,7 @@ router.post('/api/current-volunteer', async (req, res) =&gt; {
         const { volunteerName, volunteerSkills, volunteerAddress, volunteerAvailability } = req.body;
         const [address1, address2, city, state, zipcode] = volunteerAddress.split(', ');
         await queryDatabase(
-            'UPDATE userprofile SET fullName = ?, skills = ?, address1 = ?, address2 = ?, city = ?, state = ?, zipcode = ?, Availability = ? WHERE userId = ?',
+            'UPDATE UserProfile SET fullName = ?, skills = ?, address1 = ?, address2 = ?, city = ?, state = ?, zipcode = ?, Availability = ? WHERE userId = ?',
             [volunteerName, volunteerSkills, address1, address2, city, state, zipcode, volunteerAvailability, currentVolunteerIndex]
         );
         res.json({ status: 'success' });
@@ -540,7 +540,7 @@ router.get('/api/next-volunteer', async (req, res) =&gt; {
         const count = countResult[0].count;
         currentVolunteerIndex = (currentVolunteerIndex + 1) % count;
 &nbsp;
-        const volunteers = await queryDatabase('SELECT * FROM userprofile LIMIT 1 OFFSET ?', [currentVolunteerIndex]);
+        const volunteers = await queryDatabase('SELECT * FROM UserProfile LIMIT 1 OFFSET ?', [currentVolunteerIndex]);
         const volunteer = volunteers[0];
         if (volunteer) {
             res.json({
@@ -561,11 +561,11 @@ router.get('/api/next-volunteer', async (req, res) =&gt; {
 // Endpoint to navigate to previous volunteer
 router.get('/api/previous-volunteer', async (req, res) =&gt; {
     try {
-        const countResult = await queryDatabase('SELECT COUNT(*) AS count FROM userprofile');
+        const countResult = await queryDatabase('SELECT COUNT(*) AS count FROM UserProfile');
         const count = countResult[0].count;
         currentVolunteerIndex = (currentVolunteerIndex - 1 + count) % count;
 &nbsp;
-        const volunteers = await queryDatabase('SELECT * FROM userprofile LIMIT 1 OFFSET ?', [currentVolunteerIndex]);
+        const volunteers = await queryDatabase('SELECT * FROM UserProfile LIMIT 1 OFFSET ?', [currentVolunteerIndex]);
         const volunteer = volunteers[0];
         if (volunteer) {
             res.json({
@@ -585,12 +585,12 @@ router.get('/api/previous-volunteer', async (req, res) =&gt; {
 // Endpoint to get current event data
 router.get('/api/current-event', async (req, res) =&gt; {
     try {
-        const events = await queryDatabase('SELECT * FROM event_details LIMIT 1 OFFSET ?', [currentEventIndex]);
+        const events = await queryDatabase('SELECT * FROM EventDetails LIMIT 1 OFFSET ?', [currentEventIndex]);
         const event = events[0];
         if (event) {
             res.json({
                 eventName: event.eventName,
-                eventSkills: event.reqSkills,
+                eventSkills: event.reqSkills, //NOT CORRECT
                 eventLocation: event.location,
                 eventDateAndTime: formatDateTime(event.eventStartDate, event.eventStartTime, event.eventEndDate, event.eventEndTime)
             });
@@ -605,11 +605,11 @@ router.get('/api/current-event', async (req, res) =&gt; {
 // Endpoint to navigate to next event
 router.get('/api/next-event', async (req, res) =&gt; {
     try {
-        const countResult = await queryDatabase('SELECT COUNT(*) AS count FROM event_details');
+        const countResult = await queryDatabase('SELECT COUNT(*) AS count FROM EventDetails');
         const count = countResult[0].count;
         currentEventIndex = (currentEventIndex + 1) % count;
 &nbsp;
-        const events = await queryDatabase('SELECT * FROM event_details LIMIT 1 OFFSET ?', [currentEventIndex]);
+        const events = await queryDatabase('SELECT * FROM EventDetails LIMIT 1 OFFSET ?', [currentEventIndex]);
         const event = events[0];
         if (event) {
             res.json({
@@ -629,11 +629,11 @@ router.get('/api/next-event', async (req, res) =&gt; {
 // Endpoint to navigate to previous event
 router.get('/api/previous-event', async (req, res) =&gt; {
     try {
-        const countResult = await queryDatabase('SELECT COUNT(*) AS count FROM event_details');
+        const countResult = await queryDatabase('SELECT COUNT(*) AS count FROM EventDetails');
         const count = countResult[0].count;
         currentEventIndex = (currentEventIndex - 1 + count) % count;
 &nbsp;
-        const events = await queryDatabase('SELECT * FROM event_details LIMIT 1 OFFSET ?', [currentEventIndex]);
+        const events = await queryDatabase('SELECT * FROM EventDetails LIMIT 1 OFFSET ?', [currentEventIndex]);
         const event = events[0];
         if (event) {
             res.json({
@@ -658,7 +658,7 @@ module.exports = router;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-08-09T12:40:39.437Z
+                at 2024-08-09T18:22:27.403Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
