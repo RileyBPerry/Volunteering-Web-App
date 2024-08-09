@@ -84,7 +84,7 @@ DROP TABLE IF EXISTS `EventDetails`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `EventDetails` (
   `eventId` int NOT NULL AUTO_INCREMENT,
-  `creatorId` int DEFAULT NULL,
+  `creatorId` int NOT NULL,
   `eventName` varchar(100) DEFAULT NULL,
   `eventDescription` text,
   `orgName` varchar(300) DEFAULT NULL,
