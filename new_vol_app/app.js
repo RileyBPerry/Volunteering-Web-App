@@ -5,7 +5,7 @@ require('dotenv').config(); // Load environment variables
 const app = express();
 
 // Middleware to parse JSON bodies and serve static files
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -16,12 +16,6 @@ app.set('views', path.join(__dirname, 'views'));
 // Serve the EJS template
 app.get('/userprofilemanagement', (req, res) => {
     res.render('UPM');
-});
-app.get('/login', (req, res) => {
-    res.render('login');
-});
-app.get('/register', (req, res) => {
-    res.render('register');
 });
 
 // Serve the HTML file directly
@@ -50,10 +44,12 @@ app.get('/volunteermatching', (req, res) => {
 // Routes for other APIs
 app.use('/api', require('./routes/vol_history'));
 app.use('/', require('./routes/volunteer_matching'));
+app.use('/register', require('./routes/register'));
+app.use('/login', require('./routes/login'));
 
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });

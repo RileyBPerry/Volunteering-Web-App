@@ -1,32 +1,18 @@
 const express = require('express');
-const connection = require('../db/UPM_db'); // Import the database connection
 const router = express.Router();
+const db = require('../db/UPM_db');
 
-// Route for the homepage
-router.get("/", (req, res) => {
-    res.render("UPM"); // Render UPM.ejs
-});
+router.post('/upm', (req, res) => {
+    const query = 'INSERT INTO userprofile (fullname, address1, address2, city, state, zipcode, skills, preferences, availability) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
+    const values = [req.body.fullname, req.body.address1, req.body.address2, req.body.city, req.body.state, req.body.zipcode, JSON.stringify(req.body.skills), req.body.preferences, JSON.stringify(req.body.availability)];
 
-// Route for the profile page
-router.get("/userprofilemanagment", (req, res) => {
-    res.render("UPM");
-});
-
-// Handle profile submission
-router.post('/submit-profile', (req, res) => {
-    console.log('Request body:', req.body);
-    const { fullname, address1, address2, city, state, zipcode, skills, preferences, availability } = req.body;
-
-    const query = 'INSERT INTO UserProfile (fullname, address1, address2, city, state, zipcode, skills, preferences, availability) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)';
-    const values = [fullname, address1, address2, city, state, zipcode, JSON.stringify(skills), preferences, JSON.stringify(availability)];
-
-    connection.query(query, values, (err, results) => {
+    db.query(query, values, (err, results) => {
         if (err) {
             console.error('Database insert error:', err);
             res.status(500).send('Database error');
             return;
         }
-        res.send('Profile submitted successfully');
+        res.send('User profile updated successfully.');
     });
 });
 

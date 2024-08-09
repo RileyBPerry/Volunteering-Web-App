@@ -1,12 +1,11 @@
-// routes/registerRoutes.js
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcrypt');
-const db = require('../db/register_db'); // Import the database connection
+const db = require('../db/register_db'); // Ensure the path is correct
 
 // Serve the registration page
 router.get('/', (req, res) => {
-    res.render('register');
+    res.render('register'); // Ensure 'register' is the name of your EJS file
 });
 
 // Register User
@@ -24,7 +23,7 @@ router.post('/', async (req, res) => {
             return;
         }
         if (results.length > 0) {
-            res.send('Email already exists. Please use a different email.');
+            res.status(400).send('Email already exists. Please use a different email.');
         } else {
             try {
                 const saltRounds = 10;
