@@ -277,7 +277,37 @@ CREATE TABLE `UserProfile` (
 
 LOCK TABLES `UserProfile` WRITE;
 /*!40000 ALTER TABLE `UserProfile` DISABLE KEYS */;
-INSERT INTO `UserProfile` VALUES (1,'jdoe@example.com','John Doe','Admin','123 Main St','','Houston','Texas',77001),(2,'asmith@example.com','Alice Smith','Admin','456 Oak St','','Sugar Land','Texas',77479),(3,'eclark@example.com','Eva Clark','Admin','987 Cedar St','','Cypress','Texas',77433),(4,'kmorgan@example.com','Kelly Morgan','Admin','753 Dogwood St','','Missouri City','Texas',77489),(5,'jones@example.com','Jordan Jones','Admin','852 Redwood St','','Pasadena','Texas',77506),(6,'bjohnson@example.com','Bob Johnson','Volunteer','789 Pine St','','Spring','Texas',77373),(7,'dwilson@example.com','David Wilson','Volunteer','654 Maple St','','Katy','Texas',77494),(8,'fthomas@example.com','Frank Thomas','Volunteer','159 Birch St','','Tomball','Texas',77375),(9,'hharris@example.com','Henry Harris','Volunteer','951 Ash St','','Houston','Texas',77002),(10,'ijones@example.com','Ivy Jones','Volunteer','852 Redwood St','','Sugar Land','Texas',77478),(11,'jmartin@example.com','Jack Martin','Volunteer','654 Spruce St','','Spring','Texas',77379),(12,'lreyes@example.com','Leo Reyes','Volunteer','159 Palm St','','Katy','Texas',77450),(13,'mlopez@example.com','Mona Lopez','Volunteer','321 Poplar St','','Cypress','Texas',77429),(14,'nking@example.com','Nina King','Volunteer','456 Cherry St','','Tomball','Texas',77377),(15,'omartin@example.com','Olivia Martin','Volunteer','753 Willow St','','Pasadena','Texas',77505),(16,'james.smith@example.com','James Smith','Admin','123 Maple St','','Sugar Land','Texas',77479),(17,'lisa.johnson@example.com','Lisa Johnson','Admin','456 Oak Ave','','Spring','Texas',77386),(18,'michael.brown@example.com','Michael Brown','Admin','789 Pine Rd','','Houston','Texas',77001),(19,'emily.wilson@example.com','Emily Wilson','Admin','101 Birch Blvd','','Katy','Texas',77450),(20,'daniel.martinez@example.com','Daniel Martinez','Admin','202 Cedar Ln','','Cypress','Texas',77433),(21,'alex.thompson@example.com','Alex Thompson','Volunteer','303 Elm St','','Tomball','Texas',77375),(22,'samantha.miller@example.com','Samantha Miller','Volunteer','404 Willow Dr','','Missouri City','Texas',77459),(23,'joshua.anderson@example.com','Joshua Anderson','Volunteer','505 Maple Ave','','Pasadena','Texas',77506),(24,'natalie.carter@example.com','Natalie Carter','Volunteer','606 Birch St','','Spring','Texas',77373),(25,'ryan.jackson@example.com','Ryan Jackson','Volunteer','707 Cedar Ln','','Houston','Texas',77002),(26,'olivia.wright@example.com','Olivia Wright','Volunteer','808 Oak Blvd','','Cypress','Texas',77429),(27,'matthew.lee@example.com','Matthew Lee','Volunteer','909 Pine Rd','','Katy','Texas',77494),(28,'emma.harris@example.com','Emma Harris','Volunteer','1010 Elm St','','Sugar Land','Texas',77478),(29,'jacob.martin@example.com','Jacob Martin','Volunteer','1111 Willow Ave','','Missouri City','Texas',77459),(30,'isabella.hernandez@example.com','Isabella Hernandez','Volunteer','1212 Maple Dr','','Tomball','Texas',77375);
+INSERT INTO `UserProfile` VALUES
+(1,'jdoe@example.com','John Doe','Admin','123 Main St','','Houston','Texas',77001,'Computer & IT',''),
+(2,'asmith@example.com','Alice Smith','Admin','456 Oak St','','Sugar Land','Texas',77479,'Education & Literacy',''),
+(3,'eclark@example.com','Eva Clark','Admin','987 Cedar St','','Cypress','Texas',77433,'Healthcare & Social Services',''),
+(4,'kmorgan@example.com','Kelly Morgan','Admin','753 Dogwood St','','Missouri City','Texas',77489,'Business & Management',''),
+(5,'jones@example.com','Jordan Jones','Admin','852 Redwood St','','Pasadena','Texas',77506,'Marketing & Communications',''),
+(6,'bjohnson@example.com','Bob Johnson','Volunteer','789 Pine St','','Spring','Texas',77373,'Interactive & Web Development',''),
+(7,'dwilson@example.com','David Wilson','Volunteer','654 Maple St','','Katy','Texas',77494,'Hobbies & Crafts',''),
+(8,'fthomas@example.com','Frank Thomas','Volunteer','159 Birch St','','Tomball','Texas',77375,'Performing Arts',''),
+(9,'hharris@example.com','Henry Harris','Volunteer','951 Ash St','','Houston','Texas',77002,'Sports & Recreation',''),
+(10,'ijones@example.com','Ivy Jones','Volunteer','852 Redwood St','','Sugar Land','Texas',77478,'Language & Culture',''),
+(11,'jmartin@example.com','Jack Martin','Volunteer','654 Spruce St','','Spring','Texas',77379,'Disaster Relief',''),
+(12,'lreyes@example.com','Leo Reyes','Volunteer','159 Palm St','','Katy','Texas',77450,'Arts',''),
+(13,'mlopez@example.com','Mona Lopez','Volunteer','321 Poplar St','','Cypress','Texas',77429,'Transportation',''),
+(14,'nking@example.com','Nina King','Volunteer','456 Cherry St','','Tomball','Texas',77377,'Legal & Advocacy',''),
+(15,'omartin@example.com','Olivia Martin','Volunteer','753 Willow St','','Pasadena','Texas',77505,'Trades',''),
+(16,'james.smith@example.com','James Smith','Admin','123 Maple St','','Sugar Land','Texas',77479,'HR',''),
+(17,'lisa.johnson@example.com','Lisa Johnson','Admin','456 Oak Ave','','Spring','Texas',77386,'Finance',''),
+(18,'michael.brown@example.com','Michael Brown','Admin','789 Pine Rd','','Houston','Texas',77001,'Food Service & Events',''),
+(19,'emily.wilson@example.com','Emily Wilson','Admin','101 Birch Blvd','','Katy','Texas',77450,'Academics',''),
+(20,'daniel.martinez@example.com','Daniel Martinez','Admin','202 Cedar Ln','','Cypress','Texas',77433,'Animals & Environment',''),
+(21,'alex.thompson@example.com','Alex Thompson','Volunteer','303 Elm St','','Tomball','Texas',77375,'Legal & Advocacy',''),
+(22,'samantha.miller@example.com','Samantha Miller','Volunteer','404 Willow Dr','','Missouri City','Texas',77459,'Music',''),
+(23,'joshua.anderson@example.com','Joshua Anderson','Volunteer','505 Maple Ave','','Pasadena','Texas',77506,'Housing & Facilities',''),
+(24,'natalie.carter@example.com','Natalie Carter','Volunteer','606 Birch St','','Spring','Texas',77373,'Administrative & Clerical',''),
+(25,'ryan.jackson@example.com','Ryan Jackson','Volunteer','707 Cedar Ln','','Houston','Texas',77002,'Computer & IT',''),
+(26,'olivia.wright@example.com','Olivia Wright','Volunteer','808 Oak Blvd','','Cypress','Texas',77429,'Food Service & Events',''),
+(27,'matthew.lee@example.com','Matthew Lee','Volunteer','909 Pine Rd','','Katy','Texas',77494,'Healthcare & Social Services',''),
+(28,'emma.harris@example.com','Emma Harris','Volunteer','1010 Elm St','','Sugar Land','Texas',77478,'Performing Arts',''),
+(29,'jacob.martin@example.com','Jacob Martin','Volunteer','1111 Willow Ave','','Missouri City','Texas',77459,'Arts',''),
+(30,'isabella.hernandez@example.com','Isabella Hernandez','Volunteer','1212 Maple Dr','','Tomball','Texas',77375,'Sports & Recreation','');
 /*!40000 ALTER TABLE `UserProfile` ENABLE KEYS */;
 UNLOCK TABLES;
 
