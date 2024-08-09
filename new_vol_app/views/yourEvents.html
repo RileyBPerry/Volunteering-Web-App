@@ -117,7 +117,7 @@
                             <th>Date</th>
                             <th>Times</th>
                             <th>Location</th>
-                            <th>Required Skills</th>
+                            <th>Spots Taken</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -136,5 +136,45 @@
             </footer>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const adminId = '<%= adminId %>'; // Embedded by EJS
+    
+            fetch(`/api/admin/events?adminId=${adminId}`)
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('tbody');
+                    data.forEach(entry => {
+                        const tr = document.createElement('tr');
+    
+                        const eventNameTd = document.createElement('td');
+                        eventNameTd.textContent = entry.eventname || 'No event name available';
+                        tr.appendChild(eventNameTd);
+    
+                        const eventDateTd = document.createElement('td');
+                        eventDateTd.textContent = entry.eventdate || 'No date available';
+                        tr.appendChild(eventDateTd);
+    
+                        const eventTimeTd = document.createElement('td');
+                        eventTimeTd.textContent = entry.eventtime || 'No time available';
+                        tr.appendChild(eventTimeTd);
+    
+                        const locationTd = document.createElement('td');
+                        locationTd.textContent = entry.location || 'No location available';
+                        tr.appendChild(locationTd);
+    
+                        const spotsTd = document.createElement('td');
+                        spotsTd.textContent = entry.spots || 'No spots available';
+                        tr.appendChild(spotsTd);
+    
+                        tbody.appendChild(tr);
+                    });
+                })
+                .catch(error => console.error('Error fetching admin events:', error));
+        });
+    </script>
+    
+
 </body>
 </html>

@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Find Events</title>
 
-    <!--font-->
+    <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!---->
     
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/findEvents.css">
-    
 </head>
 <body>
     <div class="background">
@@ -26,21 +25,18 @@
                     <a href="profileVolunteerTest.html">My Profile</a>
                 </div>
                 <button onclick="location.href='home.html';" class="nav-right signout-button">Sign out/Log out</button>
-
             </nav>
             <main>
                 <div class="header-row">Events</div>
-                <table>
+                <table id="events-table">
                     <thead>
                         <tr>
                             <th>Upcoming</th>
                             <th>Recommended</th>
-                            <th>Saved for Later</th>
-
                         </tr>
                     </thead>
-                    <tbody>
-                      
+                    <tbody id="events-tbody">
+                        <!-- Event rows will be dynamically inserted here -->
                     </tbody>
                 </table>
             </main>
@@ -49,5 +45,7 @@
             </footer>
         </div>
     </div>
+    <!-- Include your JavaScript file -->
+    <script src="scripts/find_events.js"></script>
 </body>
 </html>

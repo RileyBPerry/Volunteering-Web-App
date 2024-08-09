@@ -6,9 +6,9 @@ const path = require('path');
 // Route to get volunteer history data
 router.get('/api/history', (req, res) => {
     db.query(
-        'SELECT e.eventName, v.hoursWorked, v.feedback, v.perfomScore AS performanceScore ' +
-        'FROM Vol_History v ' +
-        'JOIN Event_Details e ON v.eventId = e.eventId',
+        'SELECT e.eventName, v.hoursWorked, v.feedback, v.performanceScore ' +
+        'FROM VolunteerEvents v ' +
+        'JOIN EventDetails e ON v.eventId = e.eventId',
         (error, results) => {
             if (error) {
                 console.error('Error fetching data:', error);
