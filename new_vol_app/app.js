@@ -40,6 +40,12 @@ app.get('/adnotifications', (req, res) => {
 app.get('/volunteermatching', (req, res) => {
     res.sendFile(path.join(__dirname, 'views', 'volunteerMatchingForm.html'));
 });
+app.get('/findevents', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'findEvents.html'));
+});
+app.get('/yourevents', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'yourEvents.html'));
+});
 
 // Routes for other APIs
 app.use('/api', require('./routes/vol_history'));
