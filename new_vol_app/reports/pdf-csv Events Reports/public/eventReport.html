@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Reports</title>
+</head>
+<body>
+  <h1>Download Your Reports</h1>
+  <button id="downloadPdfButton">Download Event Report (PDF)</button>
+  <button id="downloadCsvButton">Download Event Report (CSV)</button>
+
+  <script>
+    document.getElementById('downloadPdfButton').addEventListener('click', () => {
+      window.location.href = '/invoice';
+    });
+
+    document.getElementById('downloadCsvButton').addEventListener('click', () => {
+      window.location.href = '/report';
+    });
+  </script>
+</body>
+</html>
